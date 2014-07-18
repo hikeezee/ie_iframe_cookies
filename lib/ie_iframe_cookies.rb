@@ -13,7 +13,7 @@ module ActionController
 
     def normal_cookies_for_ie_in_iframes(options={})
       if request.normal_cookies_for_ie_in_iframes? or options[:force]
-        headers['P3P'] = 'CP="ALL DSP COR CURa ADMa DEVa OUR IND COM NAV"'
+        headers['P3P'] = 'CP="This is not a valid P3P Policy!"'
         if request.get? or request.head?
           fresh_when :etag => rand(100_000_000) + 1, :last_modified => Time.now
         end
